@@ -17,22 +17,19 @@ export default class Students extends Component {
 
     render() {
         
-        if (this.props.studentData) {
+       
             return this.props.studentData.students.filter((s) => s.status === this.props.selectedPageSub ).map((s) => (
-                <div className="d-flex justify-content-around">
-                    <div>{s.name}</div><div>{s.phone}</div><div></div>
+                <div className="d-flex justify-content-between">
+                    <div style={studentstyle}>{s.name}</div><div>{s.phone}</div><div></div>
                 </div>
 
             ))
-        }
-            else
-            {
-                   
-            return <div>Loading...</div>
-                    
-            }
+      
         
         }
  }
    
-
+const studentstyle = {
+    color: "red",
+    width: "50%"
+}

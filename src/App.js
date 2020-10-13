@@ -9,7 +9,7 @@ export default class App extends Component {
   
     this.state = {
       login: 1,
-      selectedPage: "",
+      selectedPage: "Students",
       selectedPageSub: 0
     }
      this.timerID = setInterval(

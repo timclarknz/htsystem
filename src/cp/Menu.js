@@ -12,7 +12,7 @@ var menuitem = [{ t: "3", title: "HT Explore"},
                 {t: "0"},
                 {t: "1", title:"Teaching"},
                 {t: "2", title: "Feedback", fa: "fas fa-comments", submenu:[{title: "No Classes Today",fname:""}]},
-                {t: "2", title: "Care", fa: "fas fa-fw fa-graduation-cap", submenu:[{title: "Today",fname:"renderCare()"},{title: "First Class",fname:"renderNewStudentsToday()"},{title: "Follow Up",fname:"renderFollowUp()"}]}
+                {t: "2", title: "Care", fa: "fas fa-fw fa-graduation-cap", submenu:[{title: "Today",fname:"renderCare()"},{title: "First Class",fname:"renderNewStudentsToday()"},{title: "Follow Up",fname:"renderFollowUp()"},{title: "Messages",fname:"renderFollowUp()"}]}
                 ];
 
 export default class Menu extends Component {

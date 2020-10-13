@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Menu from './cp/Menu';
+import MainPage from './cp/MainPage'
 
 export default class App extends Component {
   constructor(props) {
@@ -21,8 +22,9 @@ export default class App extends Component {
     else
     {
       return (
-        <div>
-          <Menu />
+        <div className="row">
+          <div className="col-2"><Menu /></div>
+          <div className="col-10"><MainPage /></div>
         </div>
       )
       

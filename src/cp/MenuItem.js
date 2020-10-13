@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
 
 export default class MenuItem extends Component {
+    
+    menuClick(id,e) {
+        alert(id);
+    }
+
     render() {
         
         switch (this.props.item.t) {
@@ -17,9 +22,41 @@ export default class MenuItem extends Component {
                     </div>
                 )
             case "2":
+                if (this.props.item.submenu) {
+                    return (
+                        <div>
+                        <div className="d-flex justify-content-between" data-toggle="collapse" data-target={"#mc"+this.props.item.title}>
+                            <div><i className={this.props.item.fa} style={fastyle}></i> {this.props.item.title}</div>
+                                <div><i className="fas fa-chevron-right fa-xs"></i></div>
+                        </div>
+                            <div id={"mc"+this.props.item.title} className="collapse" >
+                                <div className="bg-white py-2 collapse-inner rounded" id="1"></div>
+                                {
+                                    this.props.item.submenu.map((m) => {
+
+                                        return <div><a className="collapse-item" onclick="" data-toggle="collapse" data-target={"#mc" + this.props.item.title} href="#">{m.title}</a></div>
+                                    })
+                                }
+                               
+                            </div>
+                        </div>
+                        
+                    )
+                        
+                    
+                }
+                
+                else {
+                    return (
+                        <div onClick={(e) => this.menuClick(this.props.item.title, e)}>
+                            <i className={this.props.item.fa} style={fastyle}></i> {this.props.item.title}
+                        </div>
+                    )
+                }
+                case "3":
                 return (
                     <div>
-                        <a href="#"><i className={this.props.item.fa}></i> {this.props.item.title}</a>
+                        <h6 style={titleStyle}>{this.props.item.title}</h6>
                     </div>
                 )
             default:
@@ -30,4 +67,13 @@ export default class MenuItem extends Component {
                 )
         }
     }
+}
+
+const fastyle = {
+    width : "20px"
+}
+
+const titleStyle = {
+    textAlign: "center",
+    marginTop: "10px"
 }

@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 
 export default class MenuItem extends Component {
     render() {
-        console.log(this.props)
         
         switch (this.props.item.t) {
             case "0":
@@ -20,7 +19,7 @@ export default class MenuItem extends Component {
             case "2":
                 return (
                     <div>
-                        <a href="#">{this.props.item.title}</a>
+                        <a href="#"><i className={this.props.item.fa}></i> {this.props.item.title}</a>
                     </div>
                 )
             default:

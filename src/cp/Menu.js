@@ -16,9 +16,9 @@ var menuitem = [{t: "0"},
 
 export default class Menu extends Component {
     render() {
-        return menuitem.map((m) => (
-            < div >
-                <MenuItem item={m}/>
+        return menuitem.map((m,i) => (
+            < div key={"m" + i}>
+                <MenuItem item={m} />
             </div >
         ));
     }

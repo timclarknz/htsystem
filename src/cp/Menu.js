@@ -7,7 +7,7 @@ var menuitem = [{ t: "3", title: "HT Explore"},
                 {t: "0"},
                 {t: "1", title:"Info"},
                 {t: "2", title: "Classes",fname:"renderClasses()", fa: "fas fa-fw fa-graduation-cap"},
-                {t: "2",title: "Students", fa: "fas fa-user", submenu:[{title: "Active",fname: "renderStudents(1)"},{title: "New",fname: "renderStudents(0)"},{title: "Pending",fname: "renderStudents(2)"},{title: "Stopped",fname: "renderStudents(3)"}]},
+                {t: "2",title: "Students", fa: "fas fa-user", submenu:[{title: "New",fname: "renderStudents(0)"},{title: "Active",fname: "renderStudents(1)"},{title: "Pending",fname: "renderStudents(2)"},{title: "Stopped",fname: "renderStudents(3)"}]},
                 {t: "2", title: "Admin", fa: "fas fa-clipboard", submenu: [{title: "Payments", fname: "renderPayments()"},{title: "Owed", fname: "renderOwed()"},{title: "Costs", fname: "renderCosts()"},{title: "Zalo", fname: "renderZaloFollowers()"},{title:"Problems", fname: "renderProblems()"},{title:"Check Bills", fname: "renderCheckBills()"},{title:"Send Bills", fname: "renderSendBills()"}]},
                 {t: "0"},
                 {t: "1", title:"Teaching"},
@@ -20,7 +20,7 @@ export default class Menu extends Component {
         return menuitem.map((m,i) => (
             <div style={menuStyle}>
             <ul key={"m" + i}>
-                <MenuItem item={m} />
+                    <MenuItem item={m} selectedPage={(v,i) => this.props.selectedPage(v,i)}/>
             </ul >
             </div>
         ));

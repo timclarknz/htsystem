@@ -1,11 +1,22 @@
 import React, { Component } from 'react'
+import Students from './Students'
+
 
 export default class MainPage extends Component {
     render() {
-        return (
-            <div>
-                Here is the main page
-            </div>
-        )
+        
+        switch (this.props.selectedPage) {
+            case "Today":
+                return (<div>Today</div>)
+            case "Students":
+                return (
+                    <div>
+               
+                        <Students studentData={this.props.data} selectedPageSub={this.props.selectedPageSub} />
+                    </div>
+                )
+            default:
+                return (<div>No Page</div>)
+        }
     }
 }

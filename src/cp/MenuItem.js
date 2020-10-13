@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 
 export default class MenuItem extends Component {
     
-    menuClick(id,e) {
-        alert(id);
+    menuClick(id,index,e) {
+        this.props.selectedPage(id,index);
     }
 
     render() {
@@ -32,9 +32,9 @@ export default class MenuItem extends Component {
                             <div id={"mc"+this.props.item.title} className="collapse" >
                                 <div className="bg-white py-2 collapse-inner rounded" id="1"></div>
                                 {
-                                    this.props.item.submenu.map((m) => {
+                                    this.props.item.submenu.map((m,i) => {
 
-                                        return <div><a className="collapse-item" onclick="" data-toggle="collapse" data-target={"#mc" + this.props.item.title} href="#">{m.title}</a></div>
+                                        return <div onClick={(e) => this.menuClick(this.props.item.title,i, e)}><a className="collapse-item" data-toggle="collapse" data-target={"#mc" + this.props.item.title} href="#">{m.title}</a></div>
                                     })
                                 }
                                

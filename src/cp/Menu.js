@@ -28,5 +28,5 @@ export default class Menu extends Component {
 }
 
 const menuStyle = {
-   
+   cursor: "pointer"
 }

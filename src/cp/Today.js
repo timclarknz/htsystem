@@ -12,8 +12,20 @@ export default class Today extends Component {
                 />
                 <AdminTask title={"Bills collected"}/>
                 </div>
+                <div className="d-flex justify-content-between p-2 shadow-lg p-3 mt-1 bg-white rounded">
+                    <div style={divstyle}>Class</div>
+                    <div style={divstyle}>Teacher</div>
+                    <div style={divstyle}>Room</div>
+                    <div style={divstyle}>Students</div>
+                    <div style={divstyle}>Attendance</div>
+                </div>
                 <TodayClasses data={this.props.data}/>
             </div>
         )
     }
+}
+
+var divstyle = {
+    width: "20%",
+    fontWeight: "bold"
 }

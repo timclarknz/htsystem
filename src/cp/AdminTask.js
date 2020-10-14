@@ -41,8 +41,8 @@ const admintaskstyle ={
     color: "white"
 }
 
-const pb = {
+/* const pb = {
     width: "20%",
     height: "20px"
-}
+} */
 

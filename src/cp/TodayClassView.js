@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Students from './Students';
 import TodayStudentView from './TodayStudentView'
 
 const rooms = [1, 2, 3, 4, 5, 6];
@@ -32,7 +31,7 @@ export default class TodayClassView extends Component {
         return (
             <div>
             <div className="p-2 shadow-lg p-3 mt-1 bg-white rounded d-flex justify-content-between">
-                <div style={divstyle}data-toggle="collapse" data-target={"#ic"+this.props.id}>{this.props.name} <i className="fas fa-chevron-down"></i></div>
+                <div style={divstyle}data-toggle="collapse" data-target={"#ic"+this.props.id}>{this.props.name} <i className="fas fa-chevron-down fa-xs"></i></div>
                 <div style={divstyle}><select value={this.props.teacherid} style={selectStyle}>{this.props.data.htusers.filter((t) => (t.role>=1 && t.status===0)).map((u) => (
                 <option value={u.id}>{u.name}</option>
                 ))}</select></div>
@@ -48,7 +47,7 @@ export default class TodayClassView extends Component {
                 </div>
             </div>
 
-            <div id={"ic"+this.props.id} className="collapse p-2">  {this.getStudents().map((s) => (<TodayStudentView student={s} indclass={this.props.id} classid={this.props.classid}/>))}</div>
+                <div id={"ic" + this.props.id} className="collapse p-2">  {this.getStudents().map((s) => (<TodayStudentView data={this.props.data} student={s} indclass={this.props.id} classid={this.props.classid}/>))}</div>
                   
             </div>
         )

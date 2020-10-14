@@ -11,6 +11,6 @@ jobs:
     - name: FTP-Deploy-Action
       uses: SamKirkland/FTP-Deploy-Action@3.1.1
       with:
-        ftp-server: ftp://ftp.htexplore.vn/
+        ftp-server: ftp://ftp.htexplore.vn/public_html/ht3
         ftp-username: htexplor
         ftp-password: ${{ secrets.FTP_PASSWORD }}

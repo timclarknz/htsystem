@@ -19,7 +19,7 @@ export default class Students extends Component {
         
        
             return this.props.studentData.students.filter((s) => s.status === this.props.selectedPageSub ).map((s) => (
-                <div className="d-flex justify-content-between">
+                <div className="d-flex justify-content-between" key={"S"+ s.id}>
                     <div style={studentstyle}>{s.name}</div><div>{s.phone}</div><div></div>
                 </div>
 

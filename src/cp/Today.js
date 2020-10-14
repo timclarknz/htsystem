@@ -18,6 +18,7 @@ export default class Today extends Component {
                     <div style={divstyle}>Room</div>
                     <div style={divstyle}>Students</div>
                     <div style={divstyle}>Attendance</div>
+                    <div style={divstyle}>Settings</div>
                 </div>
                 <TodayClasses data={this.props.data}/>
             </div>
@@ -26,6 +27,6 @@ export default class Today extends Component {
 }
 
 var divstyle = {
-    width: "20%",
+    width: "16%",
     fontWeight: "bold"
 }

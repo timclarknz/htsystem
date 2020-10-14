@@ -42,9 +42,10 @@ export default class TodayClassView extends Component {
                     <div style={atstyle} className="bg-success">{this.props.data.attendance.filter((a) => a.indclassid==this.props.id && a.attendance===1).length}</div>
                     <div style={atstyle} className="bg-warning">{this.props.data.attendance.filter((a) => a.indclassid==this.props.id && a.attendance===2).length}</div>
                     <div style={atstyle} className="bg-danger">{this.props.data.attendance.filter((a) => a.indclassid==this.props.id && a.attendance===3).length}</div>
-                    <div style={atstyle} className="bg-info"><i className="fas fa-ellipsis-h"></i></div>
+                    
 
-                </div>
+                    </div>
+                    <div style={divstyle} ><div style={atstyle} className="bg-info"><i className="fas fa-ellipsis-h"></i></div></div>
             </div>
 
                 <div id={"ic" + this.props.id} className="collapse p-2">  {this.getStudents().map((s) => (<TodayStudentView data={this.props.data} student={s} indclass={this.props.id} classid={this.props.classid}/>))}</div>
@@ -71,5 +72,5 @@ var selectStyle = {
 }
 
 var divstyle = {
-    width: "20%"
+    width: "16%"
 }

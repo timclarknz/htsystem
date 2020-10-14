@@ -1,6 +1,27 @@
 import React, { Component } from 'react'
+import JQuery from 'jquery'
 
 export default class TodayStudentView extends Component {
+
+    attend(at)
+    {
+
+        const d = new Date()
+        const dd = "" + d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate()
+        const a = {
+            table: "attendance",
+            indclassid: this.props.indclass,
+            studentiid: this.props.student.id,
+            classid: this.props.classid,
+            indclassdate: dd,
+            attendance: at
+        }
+        
+      JQuery.post("https://api.htexplore.vn/insert/",a,function(data){
+        
+      })
+    }
+
     render() {
         return (
             <div className="d-flex justify-content-between">
@@ -9,9 +30,9 @@ export default class TodayStudentView extends Component {
                 <div style={phonestyle}>{this.props.student.phone}</div>
                 </div>
                 <div>
-                    <button style={bstyle} className="btn-success m-1"></button>
-                    <button style={bstyle} className="btn-warning m-1"></button>
-                    <button style={bstyle} className="btn-danger m-1"></button>
+                    <button style={bstyle} className="btn-success m-1" onClick={(e) => this.attend(1,e)}></button>
+                    <button style={bstyle} className="btn-warning m-1" onClick={(e) => this.attend(2,e)}></button>
+                    <button style={bstyle} className="btn-danger m-1"onClick={(e) => this.attend(3,e)}></button>
 
                 </div>
 

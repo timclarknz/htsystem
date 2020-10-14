@@ -1,14 +1,17 @@
 import React, { Component } from 'react'
 import Students from './Students'
 import Admin from './Admin'
-
+import Today from './Today'
 
 export default class MainPage extends Component {
     render() {
         if (this.props.data) {
         switch (this.props.selectedPage) {
             case "Today":
-                return (<div>Today</div>)
+                return (<div>
+                    <Today data={this.props.data}/>
+
+                </div>)
             case "Students":
                 
                     return (
@@ -21,10 +24,11 @@ export default class MainPage extends Component {
              case "Admin":
                 
                     return (
-                        <div className="p-2">
+                        <div className="p-2 shadow-lg p-3 mb-5 bg-white rounded">
                             <Admin data={this.props.data} selectedPageSub={this.props.selectedPageSub} />
                         </div>
                     )
+
                 
             default:
                 return (<div>No Page</div>)

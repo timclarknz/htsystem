@@ -9,15 +9,13 @@ export default class TodayStudentView extends Component {
         const d = new Date()
         const dd = "" + d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate()
         const a = {
-            table: "attendance",
             indclassid: this.props.indclass,
-            studentiid: this.props.student.id,
+            studentid: this.props.student.id,
             classid: this.props.classid,
-            indclassdate: dd,
             attendance: at
         }
         
-      JQuery.post("https://api.htexplore.vn/insert/",a,function(data){
+      JQuery.post("https://api.htexplore.vn/attendance/",a,function(data){
         
       })
     }
@@ -34,10 +32,18 @@ export default class TodayStudentView extends Component {
                         <div style={phonestyle}>{this.props.student.phone}</div>
                     </div>
                     <div>
+                        {at ? <div>
                         <button style={at.attendance===1 ? bstylesel : bstyle} className="btn-success m-1" onClick={(e) => this.attend(1, e)}></button>
                         <button style={at.attendance===2 ? bstylesel : bstyle} className="btn-warning m-1" onClick={(e) => this.attend(2, e)}></button>
-                        <button style={at.attendance===3 ? bstylesel : bstyle} className="btn-danger m-1" onClick={(e) => this.attend(3, e)}></button>
-
+                            <button style={at.attendance === 3 ? bstylesel : bstyle} className="btn-danger m-1" onClick={(e) => this.attend(3, e)}></button>
+                            </div>
+                            :
+                            <div>
+                             <button style={bstyle} className="btn-success m-1" onClick={(e) => this.attend(1, e)}></button>
+                            <button style={bstyle} className="btn-warning m-1" onClick={(e) => this.attend(2, e)}></button>
+                            <button style={bstyle} className="btn-danger m-1" onClick={(e) => this.attend(3, e)}></button>
+                            </div>
+                        }
                     </div>
                     {at ? <div><input className="rounded mt-1" type="text" placeholder="Notes..." value={at.absentreason}></input></div> : <div><input className="rounded mt-1" type="text" placeholder="Notes..."></input></div>}
                     

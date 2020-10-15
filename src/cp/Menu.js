@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import MenuItem from './MenuItem';
 
-var menuitem = [{ t: "3", title: "HT Explore"},
-                { t: "0" },
+var menuitem = [{t: "3", title: "HT Explore"},
+                {t: "0" },
                 {t: "2", title: "Today", fname: "renderToday()", fa: "fas fa-fw fa-calendar"},
                 {t: "0"},
                 {t: "1", title:"Info"},

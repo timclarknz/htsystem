@@ -11,7 +11,7 @@ export default class MenuItem extends Component {
         switch (this.props.item.t) {
             case "0":
                 return (
-                    <div>
+                    <div style={hrstyle}>
                         <hr/>
                     </div>
                 )
@@ -76,4 +76,8 @@ const fastyle = {
 const titleStyle = {
     textAlign: "center",
     marginTop: "10px"
+}
+
+const hrstyle = {
+    color: "white"
 }

@@ -74,7 +74,7 @@ export default class App extends Component {
     {
       return (
         <div className="row">
-          <div className="col-2"><Menu selectedPage={ (v,i) => this.setState({selectedPage: v,selectedPageSub: i }) }/></div>
+          <div className="col-2" style={menustyle}><Menu selectedPage={ (v,i) => this.setState({selectedPage: v,selectedPageSub: i }) }/></div>
           <div className="col-10">
             <TopBar />
             <MainPage data={this.state.data} selectedPage={this.state.selectedPage} selectedPageSub={this.state.selectedPageSub}/>
@@ -86,3 +86,7 @@ export default class App extends Component {
   }
 }
 
+const menustyle = {
+  color: "white",
+  backgroundImage: "linear-gradient(to bottom right,#027e96,#2a9ab0)"
+}

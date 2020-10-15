@@ -13,3 +13,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+pricolor {
+    color: #027e96;
+}
+
+bg-pricolor {
+  background-color: #027e96;
+}

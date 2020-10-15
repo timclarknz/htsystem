@@ -21,16 +21,17 @@ export default class ClassView extends Component {
         return (
             <div>
                
-                <div className="d-flex p-2 mb-1 rounded" style={cvstyle}>
-                    <div>
+                <div className="p-2 mb-1 rounded" style={cvstyle}>
+                   
                     <div style={classtitle}>{htclass.name}</div>
+                     <div className="d-flex"><div className="flex-fill">
                     <div style={teacherstyle}>{teacher.name}</div>
                     <div style={students.length > 10 ? studentcounthigh : students.length > 6 ? studentcountlow : studentcountvlow}>{students.length} students</div>
                     </div>
-                    <div className="pt-3 pl-3">
+                    <div className="pl-2 flex-fill">
                     
                     <div style={roomnumber}>R {classday.room}</div>
-                    </div>
+                    </div></div>
                     
                 </div>
             </div>
@@ -53,17 +54,17 @@ const teacherstyle = {
 }
 
 const studentcounthigh = {
-    color: "limegreen",
+    color: "#5cb85c",
     fontSize: "0.7em"
 }
 
 const studentcountlow = {
-    color: "yellow",
+    color: "#f0ad4e",
     fontSize: "0.7em"
 }
 
 const studentcountvlow = {
-    color: "red",
+    color: "#fa9a93",
     fontSize: "0.7em"
 }
 

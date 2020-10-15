@@ -1,10 +1,18 @@
 import React, { Component } from 'react'
 import TodayStudentView from './TodayStudentView'
+import JQuery from 'jquery'
 
 const rooms = [1, 2, 3, 4, 5, 6];
 
 export default class TodayClassView extends Component {
-
+    constructor(props) {
+        super(props)
+  
+        this.state = {
+           teacherid: props.teacherid
+        }
+         this.changeTeacher = this.changeTeacher.bind(this);
+    }
     getStudents()
     {
         var a = [];
@@ -25,6 +33,25 @@ export default class TodayClassView extends Component {
         return a
     }
 
+    changeTeacher(event)
+    {
+        this.setState({
+            teacherid: event.target.value
+        });
+
+        var a = {
+            table: "individualclass",
+            id: this.props.id,
+            teacherid: event.target.value
+        }
+
+        JQuery.post("https://api.htexplore.vn/update/", a, function (data) {
+           
+            console.log(data);
+            
+        });
+
+    }
   
     render() {
         
@@ -32,7 +59,7 @@ export default class TodayClassView extends Component {
             <div>
             <div className="p-2 shadow-lg p-3 mt-1 bg-white rounded d-flex justify-content-between">
                 <div style={divstyle}data-toggle="collapse" data-target={"#ic"+this.props.id}>{this.props.name} <i className="fas fa-chevron-down fa-xs"></i></div>
-                <div style={divstyle}><select value={this.props.teacherid} style={selectStyle}>{this.props.data.htusers.filter((t) => (t.role>=1 && t.status===0)).map((u) => (
+                <div style={divstyle}><select value={this.state.teacherid} style={selectStyle} onChange={this.changeTeacher}>{this.props.data.htusers.filter((t) => (t.role>=1 && t.status===0)).map((u) => (
                 <option value={u.id}>{u.name}</option>
                 ))}</select></div>
             <div style={divstyle}><select id={"t"+this.props.id} value={this.props.room} style={selectStyle}>{rooms.map((r) => <option>{r}</option>)}</select></div>

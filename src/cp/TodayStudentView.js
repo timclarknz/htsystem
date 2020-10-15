@@ -16,7 +16,7 @@ export default class TodayStudentView extends Component {
         }
         
       JQuery.post("https://api.htexplore.vn/attendance/",a,function(data){
-        
+          console.log(data);
       })
     }
 

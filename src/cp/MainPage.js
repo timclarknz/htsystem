@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Students from './Students'
 import Admin from './Admin'
 import Today from './Today'
+import Classes from './Classes'
 
 export default class MainPage extends Component {
     render() {
@@ -28,7 +29,13 @@ export default class MainPage extends Component {
                             <Admin data={this.props.data} selectedPageSub={this.props.selectedPageSub} />
                         </div>
                     )
-
+            case "Classes":
+        
+                return (
+                    <div className="p-2 shadow-lg p-3 mb-5 bg-white rounded">
+                        <Classes data={this.props.data} />
+                    </div>
+                )
                 
             default:
                 return (<div>No Page</div>)

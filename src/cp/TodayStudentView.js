@@ -6,8 +6,7 @@ export default class TodayStudentView extends Component {
     attend(at)
     {
 
-        const d = new Date()
-        const dd = "" + d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate()
+       
         const a = {
             indclassid: this.props.indclass,
             studentid: this.props.student.id,

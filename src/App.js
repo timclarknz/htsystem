@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Menu from './cp/Menu'
 import TopBar from './cp/TopBar'
 import MainPage from './cp/MainPage'
+import './cp/css/menu.css'
 
 export default class App extends Component {
   constructor(props) {
@@ -9,8 +10,8 @@ export default class App extends Component {
   
     this.state = {
       login: 1,
-      selectedPage: "Classes",
-      selectedPageSub: 0
+      selectedPage: "Student",
+      selectedPageSub: 5
     }
      this.timerID = setInterval(
         () => this.tick(),
@@ -74,7 +75,7 @@ export default class App extends Component {
     {
       return (
         <div className="row">
-          <div className="col-2" style={menustyle}><Menu selectedPage={ (v,i) => this.setState({selectedPage: v,selectedPageSub: i }) }/></div>
+          <div className="col-2 menu" ><Menu selectedPage={ (v,i) => this.setState({selectedPage: v,selectedPageSub: i }) }/></div>
           <div className="col-10">
             <TopBar />
             <MainPage data={this.state.data} selectedPage={this.state.selectedPage} selectedPageSub={this.state.selectedPageSub}/>
@@ -84,9 +85,4 @@ export default class App extends Component {
       
       }
   }
-}
-
-const menustyle = {
-  color: "white",
-  backgroundImage: "linear-gradient(to bottom right,#027e96,#2a9ab0)"
 }

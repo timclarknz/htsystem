@@ -1,0 +1,19 @@
+.menu {
+
+    background-image: linear-gradient(to bottom right,#027e96,#2a9ab0);
+    color: #dddddd;
+    margin-left: 0px
+}
+
+.menuitem:hover {
+    color: white
+}
+
+.submenu {
+    background-color: white;
+    color: #027e96
+}
+
+.submenu:hover {
+    color: #2a9ab0
+}

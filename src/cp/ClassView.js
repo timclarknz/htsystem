@@ -68,11 +68,7 @@ const studentcountvlow = {
     fontSize: "0.7em"
 }
 
-const roomtitle = {
-    color: "white",
-    fontSize: "0.7em",
-    textAlign: "center"
-}
+
 
 const roomnumber = {
     color: "white",

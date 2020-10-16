@@ -26,18 +26,18 @@ export default class MenuItem extends Component {
                     return (
                         <div>
                         <div className="d-flex justify-content-between" data-toggle="collapse" data-target={"#mc"+this.props.item.title}>
-                            <div><i className={this.props.item.fa} style={fastyle}></i> {this.props.item.title}</div>
+                            <div className="menuitem"><i className={this.props.item.fa} style={fastyle}></i> {this.props.item.title}</div>
                                 <div><i className="fas fa-chevron-right fa-xs"></i></div>
                         </div>
                             <div id={"mc"+this.props.item.title} className="collapse" >
-                                <div className="bg-white py-2 collapse-inner rounded" id="1"></div>
+                                <div className="bg-white py-2 collapse-inner rounded" id="1">
                                 {
                                     this.props.item.submenu.map((m,i) => {
 
-                                        return <div onClick={(e) => this.menuClick(this.props.item.title,i, e)}><a className="collapse-item" data-toggle="collapse" data-target={"#mc" + this.props.item.title} href="#">{m.title}</a></div>
+                                        return <div key={i} className="" onClick={(e) => this.menuClick(this.props.item.title,i, e)}><button className="collapse-item btn submenu" data-toggle="collapse" data-target={"#mc" + this.props.item.title} href="#">{m.title}</button></div>
                                     })
                                 }
-                               
+                               </div>
                             </div>
                         </div>
                         
@@ -48,7 +48,7 @@ export default class MenuItem extends Component {
                 
                 else {
                     return (
-                        <div onClick={(e) => this.menuClick(this.props.item.title, e)}>
+                        <div className="menuitem" onClick={(e) => this.menuClick(this.props.item.title, e)}>
                             <i className={this.props.item.fa} style={fastyle}></i> {this.props.item.title}
                         </div>
                     )

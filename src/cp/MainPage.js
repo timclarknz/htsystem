@@ -3,6 +3,7 @@ import Students from './Students'
 import Admin from './Admin'
 import Today from './Today'
 import Classes from './Classes'
+import Student from './Student'
 
 export default class MainPage extends Component {
     render() {
@@ -36,6 +37,14 @@ export default class MainPage extends Component {
                         <Classes data={this.props.data} />
                     </div>
                 )
+
+            case "Student":
+        
+                    return (
+                        <div className="p-2 shadow-lg p-3 mb-5 bg-white rounded">
+                            <Student data={this.props.data} selectedPageSub={this.props.selectedPageSub}  />
+                        </div>
+                    )
                 
             default:
                 return (<div>No Page</div>)

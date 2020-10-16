@@ -1,8 +1,8 @@
 .menu {
 
-    background-image: linear-gradient(to bottom right,#027e96,#2a9ab0);
+    background-image: linear-gradient(to bottom right,#027e96,#53adac);
     color: #dddddd;
-    margin-left: 0px
+    margin-left: 0px;
 }
 
 .menuitem:hover {
@@ -17,3 +17,4 @@
 .submenu:hover {
     color: #2a9ab0
 }
+

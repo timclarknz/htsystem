@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './css/students.css'
 
 export default class Students extends Component {
     
@@ -26,7 +27,7 @@ export default class Students extends Component {
        
             return this.props.studentData.students.filter((s) => s.status === this.props.selectedPageSub ).map((s) => (
                 <div className="d-flex justify-content-between" key={"S"+ s.id}>
-                    <div style={studentstyle} onClick={() => this.showStudent(s.id)}>{s.name}</div><div>{s.phone}</div><div></div>
+                    <div className="students" onClick={() => this.showStudent(s.id)}>{s.name}</div><div>{s.phone}</div><div></div>
                 </div>
 
             ))
@@ -35,7 +36,4 @@ export default class Students extends Component {
         }
  }
    
-const studentstyle = {
-    color: "red",
-    width: "50%"
-}
+

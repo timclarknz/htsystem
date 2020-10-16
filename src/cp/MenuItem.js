@@ -12,7 +12,7 @@ export default class MenuItem extends Component {
             case "0":
                 return (
                     <div className="p-0 m-0">
-                        <hr/>
+                        <hr style={{borderColor: "#dddddd",marginLeft: "20px", marginRight: "20px"}} />
                     </div>
                 )
             case "1":
@@ -76,10 +76,6 @@ const fastyle = {
 const titleStyle = {
     textAlign: "center",
     marginTop: "10px"
-}
-
-const hrstyle = {
-    color: "white"
 }
 
 const subtitlestyle = {

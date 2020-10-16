@@ -35,7 +35,7 @@ export default class ClassDayList extends Component {
 }
 
 const starttime = {
-    backgroundColor: "#CCCCCC",
+    backgroundImage: "linear-gradient(to bottom right,#e3e3e3,#bababa)",
     color: "#444444",
  
 }

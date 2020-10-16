@@ -1,0 +1,9 @@
+.students {
+     color: rgb(105, 105, 105);
+     width: 50%;
+    cursor: pointer
+}
+
+.students:hover {
+    color: rgb(0, 110, 173)
+}

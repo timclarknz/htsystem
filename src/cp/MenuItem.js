@@ -30,7 +30,7 @@ export default class MenuItem extends Component {
                                 <div><i className="fas fa-chevron-right fa-xs"></i></div>
                         </div>
                             <div id={"mc"+this.props.item.title} className="collapse" >
-                                <div className="bg-white py-2 collapse-inner rounded" id="1">
+                                <div className="bg-white p-2 m-2 collapse-inner rounded" id="1">
                                 {
                                     this.props.item.submenu.map((m,i) => {
 

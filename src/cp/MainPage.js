@@ -19,7 +19,7 @@ export default class MainPage extends Component {
                     return (
                         <div className="p-2">
                             <h5>{this.props.data.students.filter((s) => s.status === this.props.selectedPageSub).length} Students </h5>
-                            <Students studentData={this.props.data} selectedPageSub={this.props.selectedPageSub} />
+                            <Students studentData={this.props.data} selectedPageSub={this.props.selectedPageSub} showStudent={(v,i) => this.props.showStudent(v,i)}/>
                         </div>
                 )
             

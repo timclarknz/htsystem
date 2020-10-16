@@ -15,12 +15,18 @@ export default class Students extends Component {
         
     }
 
+    showStudent(id)
+    {
+        //alert(id)
+        this.props.showStudent("Student",id)
+    }
+
     render() {
         
        
             return this.props.studentData.students.filter((s) => s.status === this.props.selectedPageSub ).map((s) => (
                 <div className="d-flex justify-content-between" key={"S"+ s.id}>
-                    <div style={studentstyle}>{s.name}</div><div>{s.phone}</div><div></div>
+                    <div style={studentstyle} onClick={() => this.showStudent(s.id)}>{s.name}</div><div>{s.phone}</div><div></div>
                 </div>
 
             ))

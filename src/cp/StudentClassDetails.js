@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { formatTime } from './modules/FormatTime'
+import { formatTime } from './modules/Formatting'
 import { getDayOfWeek} from './modules/dayofweek'
 
 export default class StudentClassDetails extends Component {

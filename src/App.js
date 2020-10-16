@@ -11,7 +11,7 @@ export default class App extends Component {
     this.state = {
       login: 1,
       selectedPage: "Student",
-      selectedPageSub: 5
+      selectedPageSub: 617
     }
      this.timerID = setInterval(
         () => this.tick(),
@@ -78,7 +78,7 @@ export default class App extends Component {
           <div className="col-2 menu" ><Menu selectedPage={ (v,i) => this.setState({selectedPage: v,selectedPageSub: i }) }/></div>
           <div className="col-10">
             <TopBar />
-            <MainPage data={this.state.data} selectedPage={this.state.selectedPage} selectedPageSub={this.state.selectedPageSub}/>
+            <MainPage data={this.state.data} selectedPage={this.state.selectedPage} selectedPageSub={this.state.selectedPageSub} showStudent={(v,i) => this.setState({selectedPage: v,selectedPageSub: i })}/>
             </div>
         </div>
       )

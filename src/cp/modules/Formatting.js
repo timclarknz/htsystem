@@ -9,3 +9,14 @@ export function formatTime(d) {
         }
     return ""+hours+":"+dd[1]+" "+ampm
 }
+
+export function formatDate(d) {
+    const g = d.substr(0,10)
+    const h = g.split("-")
+    return h[2]+"/"+h[1]+"/"+h[0]
+}
+
+export function formatPhone(p) {
+
+    return p.substr(0,3)+"-"+p.substr(2,3)+"-"+p.substr(5,4)
+}

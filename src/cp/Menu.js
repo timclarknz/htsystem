@@ -18,7 +18,7 @@ var menuitem = [{t: "3", title: "HT Explore"},
 export default class Menu extends Component {
     render() {
         return menuitem.map((m,i) => (
-            <div style={menuStyle} key={i}>
+            <div style={menuStyle} key={i} className="">
             
                     <MenuItem  item={m} selectedPage={(v,i) => this.props.selectedPage(v,i)}/>
             

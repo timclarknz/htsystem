@@ -11,20 +11,20 @@ export default class MenuItem extends Component {
         switch (this.props.item.t) {
             case "0":
                 return (
-                    <div style={hrstyle}>
+                    <div className="p-0 m-0">
                         <hr/>
                     </div>
                 )
             case "1":
                 return (
-                    <div>
-                        <h6>{this.props.item.title}</h6>
+                    <div className="pl-1" style={subtitlestyle}>
+                        {this.props.item.title}
                     </div>
                 )
             case "2":
                 if (this.props.item.submenu) {
                     return (
-                        <div>
+                        <div className="p-2 pl-3">
                         <div className="d-flex justify-content-between" data-toggle="collapse" data-target={"#mc"+this.props.item.title}>
                             <div className="menuitem"><i className={this.props.item.fa} style={fastyle}></i> {this.props.item.title}</div>
                                 <div><i className="fas fa-chevron-right fa-xs"></i></div>
@@ -48,7 +48,7 @@ export default class MenuItem extends Component {
                 
                 else {
                     return (
-                        <div className="menuitem" onClick={(e) => this.menuClick(this.props.item.title, e)}>
+                        <div className="menuitem pl-3" onClick={(e) => this.menuClick(this.props.item.title, e)}>
                             <i className={this.props.item.fa} style={fastyle}></i> {this.props.item.title}
                         </div>
                     )
@@ -80,4 +80,8 @@ const titleStyle = {
 
 const hrstyle = {
     color: "white"
+}
+
+const subtitlestyle = {
+    fontSize: "0.7em"
 }

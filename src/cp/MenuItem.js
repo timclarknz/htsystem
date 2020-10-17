@@ -34,7 +34,7 @@ export default class MenuItem extends Component {
                                 {
                                     this.props.item.submenu.map((m,i) => {
 
-                                        return <div key={i} className="" onClick={(e) => this.menuClick(this.props.item.title,i, e)}><button className="collapse-item btn submenu" data-toggle="collapse" data-target={"#mc" + this.props.item.title} href="#">{m.title}</button></div>
+                                        return <div key={i} className="" onClick={(e) => this.menuClick(this.props.item.title,i, e)}><button className="collapse-item submenu" data-toggle="collapse" data-target={"#mc" + this.props.item.title} href="#">{m.title}</button></div>
                                     })
                                 }
                                </div>

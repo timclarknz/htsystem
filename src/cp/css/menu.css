@@ -11,10 +11,19 @@
 
 .submenu {
     background-color: white;
-    color: #027e96
+    color: #027e96;
+    border: none
 }
 
 .submenu:hover {
-    color: #2a9ab0
+    color: #2a9ab0;
+    border: none
 }
 
+.submenu:active {
+    border: none
+}
+
+.submenu:focus {
+    outline: 0px;
+}

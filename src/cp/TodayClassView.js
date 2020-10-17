@@ -19,7 +19,7 @@ export default class TodayClassView extends Component {
         var d = new Date();
        
         this.props.data.students.forEach((s) => {
-            if(s.jsclass){
+            if(s.jsclass && s.status < 2){
             var c = JSON.parse(s.jsclass)
             if(c){
                 c.forEach((jsc) => {

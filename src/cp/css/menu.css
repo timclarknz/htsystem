@@ -27,3 +27,11 @@
 .submenu:focus {
     outline: 0px;
 }
+
+.menubutton {
+    color: white
+}
+
+.menubutton.selected {
+    color: red
+}

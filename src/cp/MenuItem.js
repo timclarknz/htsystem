@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { Button } from '@material-ui/core'
+import CalendarToday from '@material-ui/icons/CalendarToday';
 
 export default class MenuItem extends Component {
     
@@ -51,6 +53,14 @@ export default class MenuItem extends Component {
                         <div className="menuitem pl-3" onClick={(e) => this.menuClick(this.props.item.title, e)}>
                             <i className={this.props.item.fa} style={fastyle}></i> {this.props.item.title}
                         </div>
+                        /* <div>
+                            <Button 
+                            onClick={(e) => this.menuClick(this.props.item.title, e)}
+                            size="small"
+                            className="menubutton" disableElevation>
+                            {this.props.item.title}
+                            </Button>
+                        </div> */
                     )
                 }
                 case "3":
@@ -80,4 +90,18 @@ const titleStyle = {
 
 const subtitlestyle = {
     fontSize: "0.7em"
+}
+
+const bstyle = {
+    color: "white",
+    fontSize: "1em",
+    width: "90%",
+    marginLeft: "10px",
+    marginRight: "10px",
+    border: "none",
+    backgroundColor: "black"
+}
+
+const bselected = {
+    color: "red"
 }
